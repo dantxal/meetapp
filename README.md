@@ -15,8 +15,8 @@ You will need 2 databases running:
 1. Clone the repository to a folder on your machine </br>
 `git clone https://github.com/dantxal/meetapp-monorepo.git meetapp-monorepo`
 
-2. Navigate to the *api* directory</br>
-`cd meetapp-monorepo && cd api`
+2. Navigate to the *backend* directory</br>
+`cd meetapp-monorepo && cd backend`
 
 3. Install dependencies using:</br>
 `yarn` or `yarn install`
@@ -35,10 +35,10 @@ Copy the **.env.example** file, rename it to **.env** and set the environment va
 `yarn queue`
 
 
-## The API is ready!! On to the web application:
+## The backend is ready!! On to the frontend:
 
-1. Let's navigate to the web app folder: </br>
-`cd .. && cd web`
+1. Let's navigate to the frontend folder: </br>
+`cd .. && cd frontend`
 
 2. Install dependencies using:</br>
 `yarn` or `yarn install`
@@ -46,14 +46,14 @@ Copy the **.env.example** file, rename it to **.env** and set the environment va
 3. Run the application using:</br>
 `yarn start`
 
-*The web app sends requests to http://localhost:3333.</br>
+*The frontend sends requests to http://localhost:3333.</br>
 If you changed the api port you need to change the baseUrl config under services/api.js*
 
 *You may use the Reactotron app to see the flow of the application, the redux store and the sagas.*
 
 *I recommend that you create a user, log in, and create some meetups so you can see the app working and get some mock data to see in the mobile application.*
 
-## The Web Application is set! Let's build the mobile application:
+## The frontend is set! Let's build the mobile application:
 
 ### This mobile application was tested only on android.
 
