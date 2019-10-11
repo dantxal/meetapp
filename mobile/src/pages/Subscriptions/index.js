@@ -153,7 +153,7 @@ function Subscriptions({ isFocused }) {
 }
 
 Subscriptions.navigationOptions = {
-  tabBarLabel: 'Meetups',
+  tabBarLabel: 'Subscriptions',
   tabBarIcon: ({ tintColor }) => (
     <Icon name="local-offer" size={20} color={tintColor} />
   ),
