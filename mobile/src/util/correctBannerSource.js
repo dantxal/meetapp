@@ -7,9 +7,7 @@ import { HOST } from './hostConstant';
 export default function setBannerSource(banner) {
   if (banner && __DEV__) {
     const sourceObject = {
-      uri: banner.url.replace(
-        /localhost/,
-         HOST),
+      uri: banner.url.replace(/localhost/, HOST),
     };
     return sourceObject;
   }
