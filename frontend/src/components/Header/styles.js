@@ -29,6 +29,12 @@ export const LogoLink = styled(Link)`
       opacity: 1;
     }
   }
+
+  @media (max-width: 600px) {
+    h1 {
+      display: none;
+    }
+  }
 `;
 
 export const Content = styled.section`
@@ -48,6 +54,10 @@ export const Content = styled.section`
       text-align: right;
       font-size: 14px;
 
+      button {
+        display: none;
+      }
+
       strong {
         margin-bottom: 5px;
         display: block;
@@ -63,6 +73,7 @@ export const Content = styled.section`
       }
     }
     button {
+
       height: 42px;
       border: 0;
       margin-left: 30px;
@@ -76,6 +87,44 @@ export const Content = styled.section`
       &:hover {
         background: ${darken(0.02, '#d44059')};
       }
+      svg {
+        display: none;
+      }
     }
   }
+
+    @media (max-width: 600px) {
+      section {
+        a {
+          strong {
+            display: none;
+          }
+          span {
+            display: none;
+          }
+          button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            label {
+              display: block;
+              font-size: 14px;
+              margin-right: 5px;
+            }
+          }
+        }
+        button {
+          margin-left: 15px;
+          padding: 12px;
+          label {
+            display: none;
+          }
+
+          svg {
+            display: inline;
+          }
+        }
+      }
+    }
+
 `;
