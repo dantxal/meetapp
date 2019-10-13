@@ -24,6 +24,11 @@ export default function Header({ history }) {
   function handleSignOut() {
     dispatch(signOut());
   }
+
+  function navigateAndCloseMenu(route) {
+    history.push(route);
+    setIsMenuOpen(false);
+  }
   return (
     <>
       <Container>
@@ -54,12 +59,18 @@ export default function Header({ history }) {
       </Container>
       <MobileMenu isMenuOpen={isMenuOpen}>
         <li>
-          <button type="button" onClick={() => history.push('/dashboard')}>
+          <button
+            type="button"
+            onClick={() => navigateAndCloseMenu('/dashboard')}
+          >
             DASHBOARD
           </button>
         </li>
         <li>
-          <button type="button" onClick={() => history.push('/profile')}>
+          <button
+            type="button"
+            onClick={() => navigateAndCloseMenu('/profile')}
+          >
             PROFILE
           </button>
         </li>

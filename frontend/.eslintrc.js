@@ -7,8 +7,7 @@ module.exports = {
   extends: ["airbnb", "prettier", "prettier/react"],
   globals: {
     Atomics: "readonly",
-    SharedArrayBuffer: "readonly",
-    __DEV__: true
+    SharedArrayBuffer: "readonly"
   },
   parserOptions: {
     ecmaFeatures: {
