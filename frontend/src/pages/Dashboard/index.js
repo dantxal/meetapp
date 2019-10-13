@@ -3,7 +3,7 @@ import { format, parseISO } from 'date-fns';
 import { MdAddCircleOutline, MdChevronRight } from 'react-icons/md';
 import history from '~/services/history';
 
-import { Container } from './styles';
+import { Container, EmptyMeetups } from './styles';
 import api from '~/services/api';
 
 export default function Dashboard() {
@@ -25,7 +25,8 @@ export default function Dashboard() {
         <h1>My meetups</h1>
         <button type="button" onClick={() => history.push('/meetups/new')}>
           <MdAddCircleOutline size={18} color="#fff" />
-          New meetup
+          {window.innerWidth <= 600 ? 'Meetup' : 'New meetup'}
+
         </button>
       </header>
       {meetups ? (
@@ -43,7 +44,7 @@ export default function Dashboard() {
           </button>
         ))
       ) : (
-        <h1>no</h1>
+        <EmptyMeetups>You have not created a meetup yet.</EmptyMeetups>
       )}
     </Container>
   );

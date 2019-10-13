@@ -26,7 +26,7 @@ export default function RouteWrapper({
     <Route
       {...rest}
       render={props => (
-        <Layout>
+        <Layout history={props.history}>
           <Component {...props} />
         </Layout>
       )}

@@ -81,4 +81,27 @@ export const Container = styled.div`
       margin-top: 10px;
     }
   }
+
+  @media (max-width: 600px) {
+    header {
+    display: flex;
+    margin: 50px 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      button {
+        svg {
+        }
+      }
+    }
+  }
 `;
+
+export const EmptyMeetups = styled.h2``;

@@ -72,59 +72,76 @@ export const Content = styled.section`
         }
       }
     }
-    button {
+  }
 
-      height: 42px;
-      border: 0;
-      margin-left: 30px;
-      padding: 12px 20px;
-      border-radius: 4px;
-      background: #d44059;
+  @media (max-width: 600px) {
+    margin: 0;
+    margin-left: 25px;
+
+    section > a {
+      display: none;
+    }
+  }
+`;
+
+export const Logout = styled.button`
+  height: 42px;
+  border: 0;
+  margin-left: 30px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  background: #d44059;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+
+  &:hover {
+    background: ${darken(0.02, '#d44059')};
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+export const MobileMenuBars = styled.button`
+  display: none;
+
+  @media (max-width: 600px) {
+    border: 0;
+    padding: 12px;
+    background: #d44059;
+    display: inherit;
+  }
+`;
+
+export const MobileMenu = styled.ul`
+  display: none;
+
+  @media (max-width: 600px) {
+    display: ${({ isMenuOpen }) => (isMenuOpen ? 'flex' : 'none')};
+    flex-direction: column;
+    position: absolute;
+    top: 66px;
+    right: 0;
+    left: 50%;
+    background: #111;
+    li {
       color: #fff;
-      font-weight: bold;
-      font-size: 16px;
-
-      &:hover {
-        background: ${darken(0.02, '#d44059')};
-      }
-      svg {
-        display: none;
+      button {
+        width: 100%;
+        padding: 20px;
+        background: none;
+        border: 0;
+        color: #fff;
+        text-align: left;
+        border-bottom: 1px solid #666;
       }
     }
   }
+`;
 
-    @media (max-width: 600px) {
-      section {
-        a {
-          strong {
-            display: none;
-          }
-          span {
-            display: none;
-          }
-          button {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            label {
-              display: block;
-              font-size: 14px;
-              margin-right: 5px;
-            }
-          }
-        }
-        button {
-          margin-left: 15px;
-          padding: 12px;
-          label {
-            display: none;
-          }
-
-          svg {
-            display: inline;
-          }
-        }
-      }
-    }
-
+export const MobileUserName = styled.strong`
+  color: #fff;
+  font-size: 16px;
+  margin-right: 20px;
 `;
