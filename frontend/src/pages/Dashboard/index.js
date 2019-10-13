@@ -3,7 +3,7 @@ import { format, parseISO } from 'date-fns';
 import { MdAddCircleOutline, MdChevronRight } from 'react-icons/md';
 import history from '~/services/history';
 
-import { Container, EmptyMeetups } from './styles';
+import { Container, EmptyMeetups, MeetupButton } from './styles';
 import api from '~/services/api';
 
 export default function Dashboard() {
@@ -25,23 +25,23 @@ export default function Dashboard() {
         <h1>My meetups</h1>
         <button type="button" onClick={() => history.push('/meetups/new')}>
           <MdAddCircleOutline size={18} color="#fff" />
-          {window.innerWidth <= 600 ? 'Meetup' : 'New meetup'}
-
+          {window.innerWidth <= 600 ? 'New' : 'New meetup'}
         </button>
       </header>
-      {meetups ? (
+      {meetups.length > 0 ? (
         meetups.map(meetup => (
-          <button
+          <MeetupButton
             key={meetup.id}
             type="button"
             onClick={() => history.push(`/meetups/${meetup.id}`)}
           >
-            <h2>{meetup.name}</h2>
             <span>
+              <strong>{meetup.name}</strong>
+
               <p>{format(parseISO(meetup.date), "MMMM do' at 'H:mm aa")}</p>
-              <MdChevronRight size={25} color="#fff" />
             </span>
-          </button>
+            <MdChevronRight size={25} color="#fff" />
+          </MeetupButton>
         ))
       ) : (
         <EmptyMeetups>You have not created a meetup yet.</EmptyMeetups>

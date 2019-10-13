@@ -18,7 +18,7 @@ import { signOut } from '~/store/modules/auth/actions';
 export default function Header({ history }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const profile = useSelector(state => state.user.profile);
-  const [firstName, secondName] = profile.name.split(' ');
+  const [firstName, secondName = ''] = profile.name.split(' ');
 
   const dispatch = useDispatch();
   function handleSignOut() {

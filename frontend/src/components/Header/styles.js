@@ -141,7 +141,11 @@ export const MobileMenu = styled.ul`
 `;
 
 export const MobileUserName = styled.strong`
-  color: #fff;
-  font-size: 16px;
-  margin-right: 20px;
+  display: none;
+  @media (max-width: 600px) {
+    display: inline;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 20px;
+  }
 `;
