@@ -5,6 +5,7 @@ class MyMeetupsController {
   async index(req, res) {
     const myMeetups = await Meetup.findAll({
       where: { user_id: req.userId },
+      order: [['date', 'DESC']],
       include: [
         {
           model: File,
