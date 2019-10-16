@@ -41,7 +41,7 @@ export default function Edit({ match }) {
       history.push(`/meetups/${match.params.id}`);
       toast.success('Meetup successfully updated!');
     } catch (err) {
-      const error = err.response ? err.response.data.err : err;
+      const error = err.response ? err.response.data.error : err;
       toast.error(error);
     }
   }

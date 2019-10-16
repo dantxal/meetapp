@@ -77,6 +77,8 @@ export const MeetupButton = styled.button`
   color: #fff;
   transition: background 0.2s;
 
+
+
   & + button {
     margin-top: 10px;
   }
@@ -99,12 +101,15 @@ export const MeetupButton = styled.button`
       opacity: 0.6;
       margin-right: 2%;
     }
+    .past {
+      color: #f00;
+    }
   }
 
   svg {
     transition: 0.3s;
   }
-  &:hover {
+  &:hover:enabled {
     background: rgba(0, 0, 0, 0.2);
     svg {
       transform: translate(0.6em, 0);
@@ -125,5 +130,11 @@ export const MeetupButton = styled.button`
         margin: 8px 0 0;
       }
     }
+  }
+
+  &:disabled {
+    color: #aaa;
+    cursor: default;
+
   }
 `;

@@ -37,7 +37,7 @@ export default function Dashboard() {
           >
             <span>
               <strong>{meetup.name}</strong>
-
+              {meetup.past && <p className="past">PAST</p>}
               <p>{format(parseISO(meetup.date), "MMMM do' at 'H:mm aa")}</p>
             </span>
             <MdChevronRight size={25} color="#fff" />
