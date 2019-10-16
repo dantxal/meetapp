@@ -13,6 +13,7 @@ export const Content = styled.div`
   width: 100%;
   max-width: 315px;
   text-align: center;
+  margin: 0 20px;
 
   form {
     display: flex;
