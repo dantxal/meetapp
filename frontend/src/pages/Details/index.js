@@ -20,9 +20,17 @@ export default function Details({ match }) {
     getMeetup();
   }, [match]);
 
+  function handleEdit() {
+    return meetup.past
+      ? toast.error('You cannot edit a meetup that already happened')
+      : history.push(`/meetups/${meetup.id}/edit`);
+  }
+
   async function handleCancel() {
+    if (meetup.past)
+      return toast.error('You cannot cancel a meetup that already happened');
     await api.delete(`meetups/${meetup.id}`);
-    toast.warn(`You have canceled ${meetup.name}!`);
+    toast.success(`You have canceled ${meetup.name}!`);
     history.push('/dashboard');
   }
 
@@ -30,12 +38,8 @@ export default function Details({ match }) {
     <Container>
       <header>
         <h1>{meetup.name}</h1>
-        <span>
-          <button
-            className="blueBtn"
-            type="button"
-            onClick={() => history.push(`/meetups/${meetup.id}/edit`)}
-          >
+        <div>
+          <button className="blueBtn" type="button" onClick={handleEdit}>
             <MdEdit size={18} color="#fff" />
             Editar
           </button>
@@ -43,7 +47,7 @@ export default function Details({ match }) {
             <MdDeleteForever size={18} color="#fff" />
             Cancelar
           </button>
-        </span>
+        </div>
       </header>
       <img
         src={
