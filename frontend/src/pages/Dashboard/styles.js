@@ -77,8 +77,6 @@ export const MeetupButton = styled.button`
   color: #fff;
   transition: background 0.2s;
 
-
-
   & + button {
     margin-top: 10px;
   }
@@ -99,10 +97,8 @@ export const MeetupButton = styled.button`
     p {
       margin-left: auto;
       opacity: 0.6;
+      color: ${({ past }) => (past ? '#d30000' : '#fff')};
       margin-right: 2%;
-    }
-    .past {
-      color: #f00;
     }
   }
 
@@ -135,6 +131,5 @@ export const MeetupButton = styled.button`
   &:disabled {
     color: #aaa;
     cursor: default;
-
   }
 `;

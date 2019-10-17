@@ -31,7 +31,7 @@ export default function Details({ match }) {
       return toast.error('You cannot cancel a meetup that already happened');
     await api.delete(`meetups/${meetup.id}`);
     toast.success(`You have canceled ${meetup.name}!`);
-    history.push('/dashboard');
+    return history.push('/dashboard');
   }
 
   return (
@@ -41,11 +41,11 @@ export default function Details({ match }) {
         <div>
           <button className="blueBtn" type="button" onClick={handleEdit}>
             <MdEdit size={18} color="#fff" />
-            Editar
+            <span>Editar</span>
           </button>
           <button className="redBtn" type="button" onClick={handleCancel}>
             <MdDeleteForever size={18} color="#fff" />
-            Cancelar
+            <span>Cancelar</span>
           </button>
         </div>
       </header>

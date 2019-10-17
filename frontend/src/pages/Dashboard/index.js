@@ -31,13 +31,13 @@ export default function Dashboard() {
       {meetups.length > 0 ? (
         meetups.map(meetup => (
           <MeetupButton
+            past={meetup.past}
             key={meetup.id}
             type="button"
             onClick={() => history.push(`/meetups/${meetup.id}`)}
           >
             <span>
               <strong>{meetup.name}</strong>
-              {meetup.past && <p className="past">PAST</p>}
               <p>{format(parseISO(meetup.date), "MMMM do' at 'H:mm aa")}</p>
             </span>
             <MdChevronRight size={25} color="#fff" />

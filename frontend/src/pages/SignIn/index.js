@@ -27,8 +27,8 @@ export default function SignIn() {
     <>
       <img src={logo} alt="" />
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="email" type="email" placeholder="E-mail" />
-        <Input name="password" type="password" placeholder="Password" />
+        <Input name="email" type="email" placeholder="E-mail" autoComplete="e-mail"/>
+        <Input name="password" type="password" placeholder="Password" autoComplete="current-password" />
         <button type="submit">{loading ? 'Logging in...' : 'Log in'}</button>
         <Link to="/register">Create free account</Link>
       </Form>
