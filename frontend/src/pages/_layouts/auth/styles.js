@@ -27,7 +27,7 @@ export const Content = styled.div`
       padding: 15px 20px;
       color: #fff;
 
-      &:::placeholder {
+      &::placeholder {
         color: rgba(255, 255, 255, 0.7);
       }
 

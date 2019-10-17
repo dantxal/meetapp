@@ -10,7 +10,8 @@ export default styled.div`
     flex-direction: column;
     input,
     textarea {
-      height: 50px;
+      min-height: 50px;
+      max-height: 50vh;
       border-radius: 4px;
       border: 0;
       line-height: 24px;
@@ -29,7 +30,7 @@ export default styled.div`
     }
 
     textarea {
-      height: 200px;
+      min-height: 100px;
       resize: none;
     }
 
