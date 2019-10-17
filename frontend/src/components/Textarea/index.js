@@ -32,7 +32,7 @@ export default function Textarea({ name, ...rest }) {
     <>
       <TextAreaAutosize
         onChange={handleChange}
-        ref={ref}
+        inputRef={ref}
         defaultValue={defaultValue}
         value={text}
         {...rest}
