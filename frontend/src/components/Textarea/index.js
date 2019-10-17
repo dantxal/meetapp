@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useField } from '@rocketseat/unform';
+import TextAreaAutosize from 'react-textarea-autosize';
 
 export default function Textarea({ name, ...rest }) {
   const { defaultValue, registerField } = useField(name);
@@ -29,9 +30,9 @@ export default function Textarea({ name, ...rest }) {
 
   return (
     <>
-      <textarea
+      <TextAreaAutosize
         onChange={handleChange}
-        ref={ref}
+        inputRef={ref}
         defaultValue={defaultValue}
         value={text}
         {...rest}

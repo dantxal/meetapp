@@ -13,6 +13,7 @@ export const Content = styled.div`
   width: 100%;
   max-width: 315px;
   text-align: center;
+  margin: 0 20px;
 
   form {
     display: flex;
@@ -26,7 +27,7 @@ export const Content = styled.div`
       padding: 15px 20px;
       color: #fff;
 
-      &:::placeholder {
+      &::placeholder {
         color: rgba(255, 255, 255, 0.7);
       }
 

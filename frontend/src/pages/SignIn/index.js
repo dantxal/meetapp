@@ -20,15 +20,24 @@ export default function SignIn() {
 
   function handleSubmit({ email, password }) {
     dispatch(signInRequest(email, password));
-    console.tron.log(loading);
   }
 
   return (
     <>
       <img src={logo} alt="" />
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="email" type="email" placeholder="E-mail" />
-        <Input name="password" type="password" placeholder="Password" />
+        <Input
+          name="email"
+          type="email"
+          placeholder="E-mail"
+          autoComplete="e-mail"
+        />
+        <Input
+          name="password"
+          type="password"
+          placeholder="Password"
+          autoComplete="current-password"
+        />
         <button type="submit">{loading ? 'Logging in...' : 'Log in'}</button>
         <Link to="/register">Create free account</Link>
       </Form>

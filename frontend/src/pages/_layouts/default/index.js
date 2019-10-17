@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { Wrapper, Content } from './styles';
 import Header from '~/components/Header';
 
-export default function DefaultLayout({ children }) {
+export default function DefaultLayout({ children, history }) {
   return (
     <Wrapper>
-      <Header />
+      <Header history={history} />
       <Content>{children}</Content>
     </Wrapper>
   );

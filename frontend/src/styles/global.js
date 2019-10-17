@@ -24,7 +24,9 @@ export default createGlobalStyle`
 body, input, button {
   font-family: 'Helvetica','Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
   font-size: 14px;
-
+  @media (max-width: 600px) {
+   font-size: 12px;
+  }
 }
 
 a {

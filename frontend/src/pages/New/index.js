@@ -1,9 +1,11 @@
 import React from 'react';
 import * as Yup from 'yup';
 
-import { Form, Input, Textarea } from '@rocketseat/unform';
+import { Form, Input } from '@rocketseat/unform';
 import { MdAddCircleOutline } from 'react-icons/md';
 import { toast } from 'react-toastify';
+
+import Textarea from '~/components/Textarea';
 import FormContainer from '~/components/FormContainer';
 import DateTimePicker from '~/components/DateTimePicker';
 import ImageInput from '~/components/ImageInput';
@@ -32,8 +34,6 @@ export default function New() {
     } catch (err) {
       toast.error(err.response.data.error);
     }
-
-    console.tron.log(data);
   }
   return (
     <FormContainer>

@@ -5,7 +5,6 @@ export const Container = styled.div`
   margin-bottom: 20px;
 
   width: 100%;
-  height: 300px;
 
   label {
     display: flex;
@@ -13,7 +12,6 @@ export const Container = styled.div`
     align-items: center;
     cursor: pointer;
     width: 100%;
-    height: 300px;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 4px;
 
@@ -21,10 +19,11 @@ export const Container = styled.div`
       opacity: 0.7;
     }
     img {
-      height: 300px;
+      object-fit: contain;
+      height: 40vw;
+      max-height: 300px;
       max-width: 100%;
-      border-radius: 4px;
-      background: #eee;
+      background: rgba(0, 0, 0, 0.4);
     }
     input {
       display: none;

@@ -4,13 +4,14 @@ import { darken } from 'polished';
 export default styled.div`
   width: 100%;
   max-width: 940px;
-  margin: 50px 25px 0;
+  margin: 50px 25px 20px;
   form {
     display: flex;
     flex-direction: column;
     input,
     textarea {
-      height: 50px;
+      min-height: 50px;
+      max-height: 50vh;
       border-radius: 4px;
       border: 0;
       line-height: 24px;
@@ -29,7 +30,7 @@ export default styled.div`
     }
 
     textarea {
-      height: 200px;
+      min-height: 100px;
       resize: none;
     }
 

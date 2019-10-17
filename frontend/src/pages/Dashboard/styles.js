@@ -43,42 +43,93 @@ export const Container = styled.div`
     }
   }
 
-  > button {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    border: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px;
-    color: #fff;
-    transition: background 0.2s;
-    svg {
-      transition: 0.3s;
-    }
-    &:hover {
-      background: rgba(0, 0, 0, 0.2);
-      svg {
-        transform: translate(0.6em, 0);
+  @media (max-width: 600px) {
+    header {
+      display: flex;
+      margin: 50px 0;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        color: #fff;
       }
+    }
+  }
+`;
+
+export const EmptyMeetups = styled.strong`
+  font-size: 18px;
+  color: #aaa;
+`;
+
+export const MeetupButton = styled.button`
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 30px;
+  color: #fff;
+  transition: background 0.2s;
+
+  & + button {
+    margin-top: 10px;
+  }
+
+  span {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    strong {
+      font-size: 18px;
+      text-align: left;
+      width: 55%;
     }
 
-    h2 {
-      font-size: 18px;
+    p {
+      margin-left: auto;
+      opacity: 0.6;
+      color: ${({ past }) => (past ? '#d30000' : '#fff')};
+      margin-right: 2%;
     }
+  }
+
+  svg {
+    transition: 0.3s;
+  }
+  &:hover:enabled {
+    background: rgba(0, 0, 0, 0.2);
+    svg {
+      transform: translate(0.6em, 0);
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: row;
+
     span {
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      strong {
+        width: 100%;
+      }
       p {
-        opacity: 0.6;
-        margin-right: 15px;
+        margin: 8px 0 0;
       }
     }
-    & + button {
-      margin-top: 10px;
-    }
+  }
+
+  &:disabled {
+    color: #aaa;
+    cursor: default;
   }
 `;
