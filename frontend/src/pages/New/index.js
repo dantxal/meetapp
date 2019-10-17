@@ -34,8 +34,6 @@ export default function New() {
     } catch (err) {
       toast.error(err.response.data.error);
     }
-
-    console.tron.log(data);
   }
   return (
     <FormContainer>

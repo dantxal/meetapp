@@ -13,7 +13,6 @@ export default function Dashboard() {
     async function getMeetups() {
       const response = await api.get('/mymeetups');
 
-      console.tron.log(response);
       setMeetups(response.data);
     }
     getMeetups();

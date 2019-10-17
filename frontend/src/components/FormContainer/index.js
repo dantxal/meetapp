@@ -4,7 +4,7 @@ import { darken } from 'polished';
 export default styled.div`
   width: 100%;
   max-width: 940px;
-  margin: 50px 25px 0;
+  margin: 50px 25px 20px;
   form {
     display: flex;
     flex-direction: column;
