@@ -3,6 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { format, addDays, subDays, parseISO } from 'date-fns';
 import { withNavigationFocus } from 'react-navigation';
 import { ActivityIndicator, Alert } from 'react-native';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
 import api from '~/services/api';
 import correctBannerSource from '~/util/correctBannerSource';
@@ -36,6 +37,10 @@ function Dashboard({ isFocused }) {
   const [isThereMore, setIsThereMore] = useState(true);
 
   const formattedDate = useMemo(() => format(date, 'MMMM do'), [date]);
+
+  useEffect(() => {
+    changeNavigationBarColor('#000000', false);
+  }, []);
 
   function renderMeetupListFooter() {
     if (isThereMore) {

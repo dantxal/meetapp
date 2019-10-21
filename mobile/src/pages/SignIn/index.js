@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
 
 import Background from '~/components/Background';
 
@@ -23,6 +24,10 @@ export default function SignIn({ navigation }) {
   const [password, setPassword] = useState('');
 
   const passwordRef = useRef();
+
+  useEffect(() => {
+    changeNavigationBarColor('#000000', false);
+  }, []);
 
   function handleSubmit() {
     dispatch(signInRequest(email, password));
