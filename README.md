@@ -13,10 +13,10 @@ You will need 2 databases running:
 ## Now lets install the application:
 
 1. Clone the repository to a folder on your machine </br>
-`git clone https://github.com/dantxal/meetapp-monorepo.git meetapp-monorepo`
+`git clone https://github.com/dantxal/meetapp.git meetapp`
 
 2. Navigate to the *backend* directory</br>
-`cd meetapp-monorepo && cd backend`
+`cd meetapp && cd backend`
 
 3. Install dependencies using:</br>
 `yarn` or `yarn install`
